@@ -1,0 +1,19 @@
+{
+  "text_file": "009_Fig1d_Fig1e_img.txt",
+  "text_content": "Fig1d Fig1e\n移植直後.\n近心側には隣在歯との間に間隙がみられる.\n",
+  "summary": "移植直後の歯の近心側に隣接する歯との間に隙間がある。",
+  "related_images": [
+    "009_Fig1d_img.jpg",
+    "009_Fig1e_img.jpg"
+  ],
+  "metadata": {
+    "document_type": "technical_document",
+    "parent_text": "009",
+    "summary": "移植直後の歯の近心側に隣接する歯との間に隙間がある。",
+    "sequence_number": "img",
+    "creation_date": "2025-02-01 16:12",
+    "last_modified": "2025-01-31 14:31",
+    "file_size": 88,
+    "image_count": 2
+  }
+}

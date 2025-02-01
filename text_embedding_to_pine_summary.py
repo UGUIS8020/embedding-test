@@ -6,10 +6,12 @@ from langchain.schema.runnable import RunnablePassthrough
 from pinecone import Pinecone, ServerlessSpec
 from dotenv import load_dotenv
 
+source_name = os.getenv('SOURCE_NAME', 'autologous tooth transplantation')
+
 load_dotenv()
 pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
 
-index_name = "e-sports"
+index_name = "raiden"
 if index_name not in pc.list_indexes().names():
     pc.create_index(
         name=index_name,
@@ -26,20 +28,17 @@ llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
 summary_prompt = PromptTemplate(
     input_variables=["text"],
     template="""
-あなたは厳密に50文字以内で要約を作成するエキスパートです。
+あなたは厳密に80文字以内で要約を作成するエキスパートです。
 以下のルールを厳守してください：
-1. 要約は必ず50文字以内に収めること
+1. 要約は必ず80文字以内に収めること
 2. 重要な情報を優先的に含めること
+3. 生成した要約の文字数を数えて、80文字を超える場合は短く修正すること
 
 テキスト:
 {text}
 
 要約:"""
 )
-
-def process_text(text_file_path):
-    with open(text_file_path, 'r', encoding='utf-8') as f:
-        return f.read()
 
 def generate_summary(text):
     try:
@@ -52,7 +51,11 @@ def generate_summary(text):
     except Exception as e:
         print(f"Error generating summary: {e}")
         return ""
-
+    
+def process_text(text_file_path):
+    with open(text_file_path, 'r', encoding='utf-8') as f:
+        return f.read()
+    
 def split_text(text):
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
@@ -80,8 +83,7 @@ def main():
                     "chunk_index": i,
                     "text": chunk,
                     "summary": summary,
-                    "data_type": "text_content",
-                    "source": "e-sports"
+                    "data_type": "text_content",                    
                 }
                 
                 doc_id = f"text_{filename}_{i}"

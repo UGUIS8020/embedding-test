@@ -1,0 +1,20 @@
+{
+  "text_file": "009_Fig1g_Fig1h_Fig1i_img.txt",
+  "text_content": "Fig1g\nFig1h\nFig1i\n4年後.\n歯髄腔の閉塞(歯髄の自然治癒)と歯根発育がみられる.\nEPT(+).\n隣在歯および対合歯との間隙は,歯の自然移動により閉鎖されている.",
+  "summary": "4年後、歯髄腔の閉塞と歯根発育が観察され、EPT検査は陽性。隣接歯と対合歯の間隙は自然移動により閉鎖されている。",
+  "related_images": [
+    "009_Fig1g_img.jpg",
+    "009_Fig1hi_img.jpg",
+    "009_Fig1i_img.jpg"
+  ],
+  "metadata": {
+    "document_type": "technical_document",
+    "parent_text": "009",
+    "summary": "4年後、歯髄腔の閉塞と歯根発育が観察され、EPT検査は陽性。隣接歯と対合歯の間隙は自然移動により閉鎖されている。",
+    "sequence_number": "img",
+    "creation_date": "2025-02-01 16:14",
+    "last_modified": "2025-01-31 14:31",
+    "file_size": 206,
+    "image_count": 3
+  }
+}
