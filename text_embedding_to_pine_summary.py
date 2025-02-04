@@ -6,6 +6,8 @@ from langchain.schema.runnable import RunnablePassthrough
 from pinecone import Pinecone, ServerlessSpec
 from dotenv import load_dotenv
 
+"""pineconeにテキストデータと画像データを紐づけして保存する"""
+
 source_name = os.getenv('SOURCE_NAME', 'autologous tooth transplantation')
 
 load_dotenv()
